@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Reviews:</h1>
+    {% for review in reviews %}
+        <div class="comment">
+{#            <p>To article: <a href="{% url 'webapp:article_view' review.product.pk %}">{{ comment.article.title }}</a></p>#}
+            <p>{{ review.feedback }}</p>
+            <div class="pre">{{ review.feedback }}</div>
+{#            {% if comment.article.is_active and request.user == comment.author or request.user.is_superuser %}#}
+{#                <p class="comment-links">#}
+{#                    <a href="{% url 'webapp:comment_update' comment.pk %}">Edit</a>#}
+{#                    <a href="{% url 'webapp:comment_delete' comment.pk %}">Delete</a>#}
+{#                </p>#}
+{#            {% endif %}#}
+        </div>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+{% endblock %}

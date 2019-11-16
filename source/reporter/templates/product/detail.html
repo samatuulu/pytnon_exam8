@@ -18,4 +18,13 @@
         <p><a href="{% url 'reporter:product_update' product.pk %}" class="btn btn-primary">Update</a></p>
         <p><a href="{% url 'reporter:product_delete' product.pk %}" class="btn btn-danger">Delete</a></p>
     </div>
+
+
+    <h1>Reviews:</h1>
+    {% for review in product.product.all %}
+            <h6>Author: {{ review.author }}</h6>
+            <p>Feedback: {{ review.feedback }}</p>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
 {% endblock %}

@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
-from reporter.models import Product
+from reporter.models import Product, Review
 
 
 class IndexView(ListView):
@@ -17,6 +17,7 @@ class IndexView(ListView):
 class ProductView(DetailView):
     model = Product
     template_name = 'product/detail.html'
+    context_object_name = 'product'
 
 
 class ProductCreateView(CreateView):
@@ -48,3 +49,9 @@ class ProductDeleteView(DeleteView):
         product = self.object = self.get_object()
         product.delete()
         return HttpResponseRedirect(self.get_success_url())
+
+
+class ReviewListView(ListView):
+    template_name = 'review/index.html'
+    model = Review
+    context_object_name = 'reviews'

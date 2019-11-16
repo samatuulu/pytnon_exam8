@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import IndexView, ProductView, ProductCreateView, ProductUpdateView, ProductDeleteView
+from .views import IndexView, ProductView, ProductCreateView, ProductUpdateView, ProductDeleteView, ReviewListView
 
 app_name = 'reporter'
 
