@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reporter.apps.ReporterConfig',
     'widget_tweaks',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
