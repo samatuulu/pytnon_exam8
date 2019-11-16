@@ -16,7 +16,7 @@
         <p><b>Category:</b> {{ product.get_category_display }}</p>
         <p><b>Description:</b> {{ product.description }}</p>
         <p><b>In stock:</b> {{ product.in_order|yesno:"Да,Нет" }}</p>
-{#        <p><a href="{% url 'webapp:product_update' product.pk %}" class="btn btn-primary">Изменить</a></p>#}
+        <p><a href="{% url 'reporter:product_update' product.pk %}" class="btn btn-primary">Update</a></p>
 {#        <p><a href="{% url 'webapp:product_delete' product.pk %}" class="btn btn-danger">Нет в наличии</a></p>#}
     </div>
 {% endblock %}

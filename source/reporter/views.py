@@ -1,5 +1,5 @@
 from django.urls import reverse
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from reporter.models import Product
 
@@ -22,6 +22,16 @@ class ProductCreateView(CreateView):
     model = Product
     template_name = 'product/create.html'
     fields = ('name', 'category', 'description', 'photo')
+
+    def get_success_url(self):
+        return reverse('reporter:product_detail', kwargs={'pk': self.object.pk})
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    template_name = 'product/update.html'
+    fields = ('name', 'category', 'description', 'photo')
+    context_object_name = 'product'
 
     def get_success_url(self):
         return reverse('reporter:product_detail', kwargs={'pk': self.object.pk})
