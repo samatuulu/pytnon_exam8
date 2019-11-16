@@ -15,7 +15,7 @@ class Product(models.Model):
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default=CATEGORY_CHOICES[0][0],
                                 verbose_name='Category')
     description = models.TextField(max_length=2000, null=True, blank=True, verbose_name='Description')
-    photo = models.ImageField(upload_to='product_images', null=True, blank=True, verbose_name='Photo')
+    photo = models.ImageField(upload_to='uploads', null=True, blank=True, verbose_name='Photo')
 
     def __str__(self):
         return self.name
