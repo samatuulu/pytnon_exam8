@@ -1,5 +1,6 @@
-from django.urls import reverse
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.http import HttpResponseRedirect
+from django.urls import reverse, reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from reporter.models import Product
 
@@ -35,3 +36,15 @@ class ProductUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse('reporter:product_detail', kwargs={'pk': self.object.pk})
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    template_name = 'product/delete.html'
+    success_url = reverse_lazy('reporter:index')
+    context_object_name = 'product'
+
+    def delete(self, request, *args, **kwargs):
+        product = self.object = self.get_object()
+        product.delete()
+        return HttpResponseRedirect(self.get_success_url())
