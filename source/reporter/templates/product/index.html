@@ -17,7 +17,8 @@
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">{{ product.get_category_display }}</p>
+                        {{ product.get_category_display }}
+                        <a href="{% url 'reporter:product_detail' product.pk %}" class="nav-link">More information</a>
 {#                        <a href="{% url "webapp:product_detail" product.pk %}"#}
 {#                           class="btn btn-primary">Посмотреть</a>#}
 {#                        <a href="{% url 'webapp:basket_change' %}?pk={{ product.pk }}&action=add" class="btn btn-primary mt-2">В корзину</a>#}
