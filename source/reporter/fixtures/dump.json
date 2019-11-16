@@ -1,0 +1,70 @@
+[
+{
+  "model": "reporter.product",
+  "pk": 1,
+  "fields": {
+    "name": "Computer",
+    "category": "household",
+    "description": "",
+    "photo": ""
+  }
+},
+{
+  "model": "reporter.product",
+  "pk": 2,
+  "fields": {
+    "name": "Samsa",
+    "category": "food",
+    "description": "",
+    "photo": ""
+  }
+},
+{
+  "model": "reporter.product",
+  "pk": 3,
+  "fields": {
+    "name": "Jacket",
+    "category": "clothes",
+    "description": "Cool jacket!",
+    "photo": "product_images/Screenshot_2019-06-24-17-50-40-488_com.google.android.apps.docs.png"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$6Jrb3rq04Sr6$88EIguZaW5+uyKSYv7ornf1sMFdUJTMhHOtPoe5vDzs=",
+    "last_login": "2019-11-16T06:30:18.885Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-11-16T06:30:13.230Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "reporter.review",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "product": 1,
+    "feedback": "Works well. Thank you.",
+    "point": 5
+  }
+},
+{
+  "model": "reporter.review",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "product": 2,
+    "feedback": "Need more meat.",
+    "point": 3
+  }
+}
+]
